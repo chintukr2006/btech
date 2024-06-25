@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .body-a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:0px;
+        margin:0px;
+    }
+    .body-b{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:0px;
+        margin:0px;
+    }
+    .border-qr{
+        border-radius:15px;
+        border: 3px solid hsl(0, 3%, 79%);
+
+    }
+</style>
+<body>
+    <p style="display:flex;justify-content:center;align-items:center;font-size:22px;color:rgb(104, 104, 231)">Here you can  pay your money.</p>
+    <div class="body-a">
+    <img src="/static/pay.avif" style="width:250px;height:250px">
+    </div>
+    <div class="body-b">
+   <!-- <img class="border-qr" src="data:image/png;base64,{{ img_str }} " alt="QR Code" style=" width:345px; height:425px;" >-->
+    <img src="/static/qrcode.jpg" style="width:350px;height:480px">
+</div>
+</body>
+</html>

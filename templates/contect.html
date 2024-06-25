@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .body-a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:0px;
+        margin:0px;
+        border-radius: 15px;
+        display: block; /* Remove bottom space */
+        border: 2px solid #000;
+    }
+    .body-b{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:0px;
+        margin:0px;
+    }
+</style>
+<body>
+    <p style=" display:flex;justify-content:center;align-items:center;font-size:22px;color:rgb(104, 104, 231); ">Here you can  pay your money.</p>
+    <div class="body-b">
+   <!-- <img class="border-qr" src="data:image/png;base64,{{ img_str }} " alt="QR Code" style=" width:345px; height:425px;" >-->
+    <img src="/static/wha.jpg" style="width:450px;height:450px">
+</div>
+<br>
+
+    <div class="body-a">
+   <!-- <img class="border-qr" src="data:image/png;base64,{{ img_str }} " alt="QR Code" style=" width:345px; height:425px;" >-->
+    <img src="/static/call.djf.png" style="width:450px;height:450px">
+</div>
+</body>
+</html>

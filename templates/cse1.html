@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE</title>
+    <style>
+        body {
+            
+            display: flex;
+            justify-content: center;
+            margin: 1cm;
+            text-align: center;  
+            background-color: rgb(255, 255, 255);
+        }
+        .borderline {
+            text-align: center;  
+        }
+        input[type="text"] {
+            height: 35px;
+            border-color: rgb(173, 191, 209); 
+        }
+        input[type="submit"] {
+            height: 35px;
+            width: 280px;
+            border-color: rgb(0, 1, 2);
+            background-color: rgb(96, 141, 224);
+        }
+        .blue-text {
+            color: rgb(0, 0, 255);
+        }
+        .error-message {
+            color: rgb(255, 0, 0);
+            font-weight: bold;
+        }
+        .square {
+            width: 370px;
+            height:590px;
+            background-color: rgb(255, 255, 255); /* Change color as desired */
+        }
+    </style>
+</head>
+<body>
+    <div class="text">
+        <div class="borderline">
+            <div class="square">
+            <form method="post">
+                {% csrf_token %}
+                {% load static %}
+                <img src="/static/image.jpg" alt="Image" hight ="220"  width="370"><br>
+
+                <strong class="black-text">User's name:</strong><br>
+                <input type="text" placeholder="Enter the name" size="35" id="text_input" name="text_input" value="{{ first }}"><br>
+                <span class="error-message">{{ message }}</span><br>
+                
+                <strong class="black-text">Village's name:</strong><br>
+                <input type="text" placeholder="Enter Village's number" size="35" id="text_input1" name="text_input1" value="{{ second }}"><br>
+                <span class="error-message">{{ message1 }}</span><br>
+                
+                <strong class="black-text">Mobile number:</strong><br>
+                <input type="text" placeholder="Enter mobile number" size="35" id="text_input2" name="text_input2" value="{{ third }}"><br>
+                <span class="error-message">{{ message2 }}</span><br>
+                
+                <strong class="black-text">Purpose:</strong><br>
+                <input type="text" placeholder="Enter the purpose" size="35" id="text_input3" name="text_input3" value="{{ forth }}"><br>
+                <span class="error-message">{{ message3 }}</span><br>
+                <input type="submit" value="Submit" size="35">
+            </form>
+        </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const nextUrl = urlParams.get('next');
+            if (nextUrl) {
+                window.location.href = "{% url 'manjay' %}?image=" + encodeURIComponent(nextUrl);
+            }
+        });
+    </script>
+</body>
+</html>

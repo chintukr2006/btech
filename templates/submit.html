@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 10px;
+            min-block-size: 15px;
+        }
+
+        .border-box {
+            width: 100%;
+            max-width: 1100px;
+            border: 5px solid black;
+            background-color: lightblue;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+            padding: 5px;
+        }
+
+        .flex-container img {
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        @media (min-width: 481px) and (max-width: 760px) {
+            .flex-container img {
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .border-box {
+                padding: 10px;
+            }
+
+            .flex-container img {
+                max-width: 100%;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body download>
+    
+    <div class="flex-container">
+        <div class="border-box">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+            <p style="font-size: 50px;">HOME AGREEMENT FORM</p>
+            {% if img %}
+                <a href="{{ img.image.url }}" style="height: 250px;">
+                   <img src="{{ img.image.url }}" alt="{{ img.caption }}">
+                </a>
+            {% elif image_url %}
+            <a href="{{ image_url }}" style="height: 250px;">
+            <img style="height: 200px; width: 300px;" src="{{ image_url }}" alt="{{ img.caption }}">
+            </a>
+            {% else %}
+                <img src="/static/image21.jpeg" alt="Home Image"> 
+            {% endif %}
+            <p style="color: black;">घर का मालिक</p>
+            {% if purpose == "Plaster" %}
+            <p>मुझे यह बताते हुए खुशी हो रही है कि मैं {{vill}} का मालिक हूँ <br>
+                और मैं आपको मेरे नए घर के प्लास्टर का ठेका देने के लिए आमंत्रित करना चाहता हूँ।<br>
+                आपके शानदार पोर्टफोलियो और योग्यताओं की समीक्षा करने के बाद, मुझे पूरा विश्वास है
+                कि आप इस परियोजना के लिए उपयुक्त ठेकेदार हैं।
+            </p>
+            {% elif purpose == "Home" %}
+            <p>मुझे यह बताते हुए खुशी हो रही है कि मैं {{vill}} का मालिक हूँ <br>
+                और मैं आपको मेरे नए घर के निर्माण का ठेका देने के लिए आमंत्रित करना चाहता हूँ।<br>
+                आपके शानदार पोर्टफोलियो और योग्यताओं की समीक्षा करने के बाद, मुझे पूरा विश्वास है
+                कि आप इस परियोजना के लिए उपयुक्त ठेकेदार हैं।</p>
+            {% elif purpose == "home" %}
+               <p>मुझे यह बताते हुए खुशी हो रही है कि मैं {{vill}} का मालिक हूँ <br>
+                और मैं आपको मेरे नए घर के निर्माण का ठेका देने के लिए आमंत्रित करना चाहता हूँ।<br>
+                आपके शानदार पोर्टफोलियो और योग्यताओं की समीक्षा करने के बाद, मुझे पूरा विश्वास है
+                कि आप इस परियोजना के लिए उपयुक्त ठेकेदार हैं।</p>
+            {% elif purpose == "plaster" %}
+                <p>मुझे यह बताते हुए खुशी हो रही है कि मैं {{vill}} का मालिक हूँ <br>
+                और मैं आपको मेरे नए घर के प्लास्टर का ठेका देने के लिए आमंत्रित करना चाहता हूँ।<br>
+                आपके शानदार पोर्टफोलियो और योग्यताओं की समीक्षा करने के बाद, मुझे पूरा विश्वास है
+                कि आप इस परियोजना के लिए उपयुक्त ठेकेदार हैं।
+                </p>
+            {% else %}
+            <p>यह फॉर्म मान्य नहीं है, कृपया अपने घर का सही उद्देश्य लिखें।</p>
+            {% endif %}
+            <p>Houseowner</p>
+            {% if purpose == "Plaster" %}
+            <p>
+                I am pleased to inform you that I am the owner of {{vill}}<br>
+                and I would like to extend an invitation for you to take on the construction of my home's plaster.<br>
+                After reviewing your impressive portfolio and credentials, I am confident that you are the
+                ideal contractor for this project.
+            </p>
+            {% elif purpose == "plaster" %}
+            <p>
+                I am pleased to inform you that I am the owner of {{vill}}<br>
+                and I would like to extend an invitation for you to take on the construction of my home's plaster.<br>
+                After reviewing your impressive portfolio and credentials, I am confident that you are the
+                ideal contractor for this project.
+            </p>
+            {% elif purpose == "Home" %}
+            <p>I am pleased to inform you that I am the owner of {{vill}}<br>
+                and I would like to extend an invitation for you to take on the construction of my new home.<br>
+                After reviewing your impressive portfolio and credentials, I am confident that you are the
+                ideal contractor for this project.</p>
+            {% elif purpose == "home" %}
+                <p>I am pleased to inform you that I am the owner of {{vill}}<br>
+                and I would like to extend an invitation for you to take on the construction of my new home.<br>
+                After reviewing your impressive portfolio and credentials, I am confident that you are the
+                ideal contractor for this project.</p>
+            {% else %}
+            <p>this form is not valid please write correct purpose of your house thinku. </p>
+            {% endif %}
+            <p style="font-size: large; ">Houseowner's:- {{name}}</p>
+            <p style="font-size: large;">Village's name:- {{vill}}</p>
+            <p style="font-size: large;">Mobile number:- {{mob}}</p>
+            <p style="font-size: large;"></p>Houseowner's signature:................................. Contractor's signature:........................................</p>
+
+        </div>
+    </div>
+</body>
+</html>
+

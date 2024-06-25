@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mistri</title>
+<style>
+  body {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+  }
+  .flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping to handle smaller screens */
+    gap: 20px; /* Add some spacing between items */
+    margin: 10px; /* Add margin to container */
+  }
+  .flex-container a {
+    flex: 1 1 calc(33% - 20px); /* Adjust the percentage to fit your design needs */
+    box-sizing: border-box;
+  }
+  .flex-container img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px;
+    display: block; /* Remove bottom space */
+    border: 2px solid #000;
+  }
+  @media (max-width: 768px) {
+    .flex-container a {
+      flex: 1 1 calc(50% - 20px); /* Two columns on medium screens */
+    }
+  }
+  @media (max-width: 480px) {
+    .flex-container a {
+      flex: 1 1 calc(100% - 20px); /* One column on small screens */
+    }
+  
+  }
+  .top-border {
+    position: fixed;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 68px; /* Height of the border */
+    background-color: #000000; /* Border color */
+    color: white; /* Text color */
+    font-size: 40px; /* Text size */
+    width: 100%;
+    top: 0px;
+    
+  }
+</style>
+</head>
+<body>
+  {% load static %}
+  <div class="flex-container">
+  <div class="top-border">
+  <ul><a href="{% url 'cse' %}" style="color: rgb(255, 166, 0); ">Select image</a></ul><br>
+  <ul><a href="{% url 'kumar' %}" style="color: rgb(255, 166, 0);">contract</a></ul><br>
+  <ul><a href="{% url 'contect' %}" style="color: rgb(255, 166, 0); ">payment</a></ul><br>
+  <ul><a style="color: rgb(255, 166, 0); ">Login</a></ul><br>
+  <ul><a style="color: rgb(255, 166, 0); ">Limit</a></ul><br>
+</div><br><br><br><br><br>
+</div>
+<!-- First Image Container -->
+<div class="flex-container">
+  <a>
+    <img src="{% static 'image6.jpeg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image6.jpeg' %}" style="cursor:pointer;">
+  </a>
+</div>
+<!-- Second Image Container -->
+<div class="flex-container">
+  <a >
+    <img src="{% static 'image5.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image5.jpg' %}" style="cursor:pointer;">
+  </a>
+  <a>
+    <img src="{% static 'image3.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image3.jpg' %}" style="cursor:pointer;">
+  </a>
+</div>
+
+<!-- Third Image Container -->
+<div class="flex-container">
+  <a>
+    <img src="{% static 'image4.jpeg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image4.jpeg' %}" style="cursor:pointer;">
+  </a>
+</div>
+
+<!-- Fourth Image Container -->
+<div class="flex-container">
+  <a>
+    <img src="{% static 'image7.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image7.jpg' %}" style="cursor:pointer;">
+  </a>
+  <a>
+    <img src="{% static 'image8.avif' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image8.avif' %}" style="cursor:pointer;">
+  </a>
+</div>
+
+<!-- Fifth Image Container -->
+<div class="flex-container">
+  <a>
+    <img src="{% static 'image9.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image9.jpg' %}" style="cursor:pointer;">
+  </a>
+</div>
+
+<!-- Fourth Image Container -->
+<div class="flex-container">
+  <a>
+    <img src="{% static 'image10.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image10.jpg' %}" style="cursor:pointer;">
+  </a>
+  <a>
+    <img src="{% static 'image11.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image11.jpg' %}" style="cursor:pointer;">
+  </a>
+</div>
+
+<!-- Fifth Image Container -->
+<div class="flex-container">
+  <a>
+    <img src="{% static 'image13.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image13.jpg' %}" style="cursor:pointer;">
+  </a>
+</div>
+
+<!-- Fourth Image Container -->
+<div class="flex-container">
+  <a>
+    <img src="{% static 'image12.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image12.jpg' %}" style="cursor:pointer;">
+  </a>
+  <a>
+    <img src="{% static 'image14.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image14.jpg' %}" style="cursor:pointer;">
+  </a>
+</div>
+
+<!-- Fifth Image Container -->
+<div class="flex-container">
+  <a>
+    <img src="{% static 'image15.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image15.jpg' %}" style="cursor:pointer;">
+  </a>
+</div>
+
+<!-- Fourth Image Container -->
+<div class="flex-container">
+  <a>
+    <img src="{% static 'image16.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image16.jpg' %}" style="cursor:pointer;">
+  </a>
+  <a>
+    <img src="{% static 'image18.png' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image18.png' %}" style="cursor:pointer;">
+  </a>
+</div>
+
+<!-- Fifth Image Container -->
+<div class="flex-container">
+  <a>
+    <img src="{% static 'image17.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image17.jpg' %}" style="cursor:pointer;">
+  </a>
+</div>
+
+<!-- Fourth Image Container -->
+<div class="flex-container">
+  <a>
+    <img src="{% static 'image19.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image19.jpg' %}" style="cursor:pointer;">
+  </a>
+  <a>
+    <img src="{% static 'image20.jpg' %}" alt="Clickable Image" class="clickableImage" data-image-url="{% static 'image20.jpg' %}" style="cursor:pointer;">
+  </a>
+</div>
+
+<script>
+  document.querySelectorAll('.clickableImage').forEach(function(image) {
+      image.onclick = function() {
+         const imageUrl = this.getAttribute('data-image-url');
+         window.location.href = "{% url 'manjay' %}?image=" + encodeURIComponent(imageUrl);
+  };
+});
+</script>
+
+</body>
+</html>
